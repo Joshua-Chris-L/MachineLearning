@@ -113,18 +113,9 @@ print(X_train)
 
 print(X_test)
 
-
-# In[19]:
-
-
 print(y_train)
 
-
-# In[20]:
-
-
 print(y_test)
-
 
 # ## Feature Scaling
 
