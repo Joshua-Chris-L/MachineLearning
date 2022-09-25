@@ -19,12 +19,9 @@ dataset = pd.read_csv('Data.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
-
 # In[5]:
 
-
 print(X)
-
 
 # In[7]:
 
@@ -60,16 +57,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0])], remainder='passthrough')
 X = np.array(ct.fit_transform(X))
-
-
 # In[ ]:
 
-
-
-
-
 # In[13]:
-
 
 print(X)
 
