@@ -4,33 +4,16 @@
 # # Support Vector Regression (SVR)
 
 # ## Importing the libraries
-
-# In[5]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
 
 # ## Importing the dataset
-
-# In[6]:
-
-
 dataset = pd.read_csv('Position_Salaries.csv')
 X = dataset.iloc[:, 1:-1].values
 y = dataset.iloc[:, -1].values
-
-
-# In[7]:
-
-
 print(X)
-
-
-# In[8]:
-
 
 print(y)
 
