@@ -4,35 +4,19 @@
 # # K-Means Clustering
 
 # ## Importing the libraries
-
-# In[9]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
 
 # ## Importing the dataset
-
-# In[10]:
-
-
 dataset = pd.read_csv('Mall_Customers.csv')
 X = dataset.iloc[:, [3, 4]].values
-
-
-# In[11]:
-
 
 print(X)
 
 
 # ## Using the elbow method to find the optimal number of clusters
-
-# In[12]:
-
-
 from sklearn.cluster import KMeans
 wcss = [ ]
 
@@ -53,16 +37,8 @@ plt.show()
 kmeans = KMeans( n_clusters = 5, init = 'k-means++', random_state = 42)
 y_kmeans = kmeans.fit_predict(X ) # trains data to identify the dependent variable
 
-
-# In[14]:
-
-
 kmeans = KMeans(n_clusters = 5, init = 'k-means++', random_state = 42)
 y_kmeans = kmeans.fit_predict(X)
-
-
-# In[15]:
-
 
 print(y_kmeans)
 
@@ -83,25 +59,7 @@ plt.legend()
 plt.show()
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[22]:
+#In[22]:
 
 
 from sklearn.cluster import KMeans
