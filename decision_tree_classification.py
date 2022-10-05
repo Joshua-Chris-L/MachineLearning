@@ -4,10 +4,6 @@
 # # Decision Tree Classification
 
 # ## Importing the libraries
-
-# In[1]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -84,10 +80,6 @@ plt.show()
 
 
 # ## Visualising the Test set results
-
-# In[16]:
-
-
 from matplotlib.colors import ListedColormap
 X_set, y_set = sc.inverse_transform(X_test), y_test
 X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 10, stop = X_set[:, 0].max() + 10, step = 0.25),
