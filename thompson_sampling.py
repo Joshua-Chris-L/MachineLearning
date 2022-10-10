@@ -4,28 +4,16 @@
 # # Thompson Sampling
 
 # ## Importing the libraries
-
-# In[21]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
 
 # ## Importing the dataset
-
-# In[22]:
-
-
 dataset = pd.read_csv('Ads_CTR_Optimisation.csv')
 
 
 # ## Implementing Thompson Sampling
-
-# In[23]:
-
-
 import random
 
 N = 500
@@ -54,10 +42,6 @@ for n in range(0,N):
 
 
 # ## Visualising the results - Histogram
-
-# In[24]:
-
-
 plt.hist(ads_selected)
 plt.title('Histogram of ads selections')
 plt.xlabel('Ads')
