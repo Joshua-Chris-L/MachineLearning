@@ -4,113 +4,59 @@
 # # Random Forest Classification
 
 # ## Importing the libraries
-
-# In[2]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
 
 # ## Importing the dataset
-
-# In[3]:
-
-
 dataset = pd.read_csv('Social_Network_Ads.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
 
 # ## Splitting the dataset into the Training set and Test set
-
-# In[4]:
-
-
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
 
 
-# In[5]:
-
-
 print(X_train)
-
-
-# In[6]:
-
 
 print(y_train)
 
-
-# In[7]:
-
-
 print(X_test)
-
-
-# In[8]:
-
 
 print(y_test)
 
 
 # ## Feature Scaling
-
-# In[9]:
-
-
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
 
-# In[10]:
-
-
 print(X_train)
-
-
-# In[11]:
-
 
 print(X_test)
 
 
 # ## Training the Random Forest Classification model on the Training set
-
-# In[16]:
-
-
 from sklearn.ensemble import RandomForestClassifier
 classifier = RandomForestClassifier(n_estimators = 100, criterion = 'entropy', random_state = 0)
 classifier.fit(X_train, y_train)
 
 
 # ## Predicting a new result
-
-# In[17]:
-
-
 print(classifier.predict(sc.transform([[30,87000]])))
 
 
 # ## Predicting the Test set results
-
-# In[18]:
-
-
 y_pred = classifier.predict(X_test)
 print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
 
 
 # ## Making the Confusion Matrix
-
-# In[20]:
-
-
 from sklearn.metrics import confusion_matrix, accuracy_score
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
@@ -118,10 +64,6 @@ accuracy_score(y_test, y_pred)
 
 
 # ## Visualising the Training set results
-
-# In[15]:
-
-
 from matplotlib.colors import ListedColormap
 X_set, y_set = sc.inverse_transform(X_train), y_train
 X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 10, stop = X_set[:, 0].max() + 10, step = 0.25),
@@ -140,9 +82,6 @@ plt.show()
 
 
 # ## Visualising the Test set results
-
-# In[16]:
-
 
 from matplotlib.colors import ListedColormap
 X_set, y_set = sc.inverse_transform(X_test), y_test
